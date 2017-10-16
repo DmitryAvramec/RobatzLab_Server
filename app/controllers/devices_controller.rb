@@ -4,11 +4,10 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.where("last_message_time >= ?", Time.now - 120)
+    @devices = Device.where("last_message_time >= TIMESTAMP WITH TIME ZONE '#{Time.zone.now - 120}'")
   end
 
   def action
-    binding.pry
     device = Device.find_or_create_by(device_id: params[:device_id])
     if device.device_ip
       unless device.device_ip == request.remote_ip
@@ -22,9 +21,8 @@ class DevicesController < ApplicationController
       device.device_ip = request.remote_ip
       device.message = params[:message]
       device.email = params[:email]
-      device.last_message_time = Time.now
+      device.last_message_time = Time.zone.now
     end
-    binding.pry
     device.save
   end
 

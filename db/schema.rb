@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20171016165906) do
     t.integer "device_id"
     t.string "email"
     t.text "message"
-    t.time "last_message_time"
+    t.datetime "last_message_time"
     t.string "device_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
