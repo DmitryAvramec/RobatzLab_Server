@@ -1,0 +1,21 @@
+- @devices.each do |device|
+  .card
+    .card-header.text-center
+        h3.align-self-end
+          | ID #{device.device_id}
+    .card-body.text-center
+      table
+        tr
+          td.text-center
+            | Email
+          td.text-center
+            | Message
+          td.text-center
+            | IP
+        tr
+          td.text-center
+            | #{device.email}
+          td.text-center
+            | #{device.message}
+          td.text-center
+            | #{device.device_ip}

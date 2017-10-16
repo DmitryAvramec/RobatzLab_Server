@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Device_ID</th>
+      <th>Email</th>
+      <th>Message</th>
+      <th>Device_IP</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @devices.each do |device| %>
+      <tr>
+        <td><%= device.device_id %></td>
+        <td><%= device.email %></td>
+        <td><%= device.message %></td>
+        <td><%= device.device_ip %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
