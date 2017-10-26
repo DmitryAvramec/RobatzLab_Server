@@ -4,7 +4,11 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.where("last_message_time >= TIMESTAMP WITH TIME ZONE '#{Time.zone.now - 120}'")
+    @devices =Device.where("last_message_time >= TIMESTAMP WITH TIME ZONE '#{Time.zone.now - 120}'")
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def action

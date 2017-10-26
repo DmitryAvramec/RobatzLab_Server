@@ -1,0 +1,21 @@
+.col-md-4
+  .card.mb-4
+    .card-header
+        h5.card-title
+          | ID #{device.device_id}
+    .card-body
+      table.table-bordered[style="width: 100%"]
+        thead
+          th.text-center
+            | Email
+          th.text-center
+            | Message
+          th.text-center
+            | IP
+        tbody
+          td.text-center
+            p  #{device.email}
+          td.text-center
+            p  #{device.message}
+          td.text-center
+            p  #{device.device_ip}
