@@ -28,6 +28,7 @@ class DevicesController < ApplicationController
       device.last_message_time = Time.zone.now
     end
     device.save
+    render json: { "status": 200, "message": "I take it! All is ok" }
   end
 
   private
