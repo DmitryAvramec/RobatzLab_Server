@@ -8,6 +8,10 @@ end
 gem 'pry'
 gem 'slim-rails'
 gem 'bootstrap'
+<<<<<<< HEAD
+=======
+gem 'bootstrap-sass'
+>>>>>>> 6f3ef55acafbb5ede087284f057e450de878f228
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
