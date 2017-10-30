@@ -15,8 +15,8 @@
 #define USE_SERIAL Serial
 #define URL "http://192.168.100.47:3000/action" //set url to server endpoint here
 
-#define SSID "CyberNet"
-#define SSID_PASS "cyberpass496"
+#define SSID "" //wifi id here
+#define SSID_PASS "" // wifi pass here
 ESP8266WiFiMulti WiFiMulti;
 String DEVICE_ID = "1"; //Set here id of device
 String EMAIL = "your@email.com"; //Set your email here
@@ -44,12 +44,12 @@ void loop() {
         HTTPClient http;
         USE_SERIAL.print("[HTTP] begin...\n");
         USE_SERIAL.print("[HTTP] POST...\n");
-        // start connection and send HTTP header    
-        http.begin(URL); 
+        // start connection and send HTTP header
+        http.begin(URL);
         http.addHeader("Content-Type", "application/json");
         String message_body = "Some good news";
         String post_message = MESSAGE + ",\"message\":\"" + message_body + "\"}";
-        int httpCode = http.POST(post_message);        
+        int httpCode = http.POST(post_message);
         if(httpCode == HTTP_CODE_OK) {
             String payload = http.getString();
                 USE_SERIAL.println(payload);
@@ -61,4 +61,3 @@ void loop() {
     }
     delay(60000);
 }
-
